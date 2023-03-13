@@ -27,7 +27,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String query = "CREATE TABLE " + TABLE_NAME + " (" + FIELD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                FIELD_NAMA + " VARCHER(50)," + FIELD_NOMOR + " INTEGER(2)," + FIELD_KLUB + " TEXT)";
+                FIELD_NAMA + " VARCHAR(50)," + FIELD_NOMOR + " VARCHAR(2)," + FIELD_KLUB + " TEXT)";
 
         db.execSQL(query);
     }
@@ -39,7 +39,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long tambahPlayer(String nama, int nomor, String klub){
+    public long tambahPlayer(String nama, String nomor, String klub){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -54,7 +54,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor bacaDataPlayer(){
         SQLiteDatabase db = this.getReadableDatabase();
-        String querry = "SELECT * FROM " + TABLE_NAME;
+        String querry = "SELECT * FROM " + TABLE_NAME + " ORDER BY " + FIELD_NAMA;
 
         Cursor cursor = null;
         if (db != null){

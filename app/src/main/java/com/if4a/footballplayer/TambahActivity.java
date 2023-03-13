@@ -45,7 +45,7 @@ public class TambahActivity extends AppCompatActivity {
                         etKlub.setError("Nama Klub Harus Diisi!");
                     }
                 }else{
-                    long eksekusi = myDb.tambahPlayer(nama, Integer.parseInt(nomor), klub);
+                    long eksekusi = myDb.tambahPlayer(nama, nomor, klub);
 
                     if(eksekusi == -1){
                         Toast.makeText(TambahActivity.this, "Gagal Menambahkan Data Pemain", Toast.LENGTH_LONG).show();

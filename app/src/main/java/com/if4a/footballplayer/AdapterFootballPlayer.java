@@ -73,9 +73,9 @@ public class AdapterFootballPlayer extends RecyclerView.Adapter<AdapterFootballP
                             MyDatabaseHelper myDb =new MyDatabaseHelper(ctx);
                             long eksekusi = myDb.hapusPlayer(tvId.getText().toString());
                             if(eksekusi == -1){
-                                Toast.makeText(ctx, "Gagal Menghapis Data!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ctx, "Gagal Menghapus Data!", Toast.LENGTH_SHORT).show();
                             }else{
-                                Toast.makeText(ctx, "Sukse Menghapus Data!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ctx, "Sukses Menghapus Data!", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                             }
                         }
