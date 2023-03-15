@@ -77,6 +77,7 @@ public class AdapterFootballPlayer extends RecyclerView.Adapter<AdapterFootballP
                             }else{
                                 Toast.makeText(ctx, "Sukses Menghapus Data!", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
+                                ((MainActivity) ctx).onResume();
                             }
                         }
                     });
