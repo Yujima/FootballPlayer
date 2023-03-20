@@ -26,7 +26,7 @@ public class UbahActivity extends AppCompatActivity {
         etKlub = findViewById(R.id.et_namaKlubUbah);
         btnUbah = findViewById(R.id.btn_ubah);
 
-        Intent intent = new Intent();
+        Intent intent = getIntent();
         id = intent.getStringExtra("vId");
         nama = intent.getStringExtra("vNama");
         nomor = intent.getStringExtra("vNomor");
